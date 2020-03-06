@@ -13,9 +13,11 @@
 
 
 # Step 1
-FROM alpine
+FROM node:alpine
+
 
 # Step 2
+COPY ./ ./
 RUN npm install
 
 # Step 3 
