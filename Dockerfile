@@ -16,7 +16,7 @@
 FROM alpine
 
 # Step 2
-RUN apk add --update redis
+RUN npm install
 
 # Step 3 
-CMD ["redis-server"]
+CMD ["npm", "start"]
