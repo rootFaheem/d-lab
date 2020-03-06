@@ -16,6 +16,9 @@
 FROM node:alpine
 
 
+# Specify the working directory before running the commands
+WORKDIR /usr/app
+
 # Step 2
 COPY ./ ./
 RUN npm install
