@@ -20,8 +20,9 @@ FROM node:alpine
 WORKDIR /usr/app
 
 # Step 2
-COPY ./ ./
+COPY ./package.json ./
 RUN npm install
+COPY ./ ./
 
 # Step 3 
 CMD ["npm", "start"]
