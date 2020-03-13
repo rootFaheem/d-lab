@@ -1,9 +1,12 @@
 {
-    "dependencies": {
-        "express": "*"
-    }, 
-
-    "scripts": {
-        "start": "node index.js"
-    }
+  "dependencies": {
+    "express": "*",
+    "redis": "^3.0.2"
+  },
+  "scripts": {
+    "server": "nodemon index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
 }
