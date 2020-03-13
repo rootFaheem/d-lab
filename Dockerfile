@@ -20,9 +20,8 @@ FROM node:alpine
 WORKDIR /usr/app
 
 # Step 2
-COPY ./package.json ./
-RUN npm install
-COPY ./ ./
-
+COPY ./package.json .
+RUN yarn
+COPY . .
 # Step 3 
-CMD ["npm", "start"]
+CMD ["yarn", "server"]
