@@ -15,7 +15,7 @@ app.get("/", (req, res, next) =>
 );
 
 app.get("/visits", (req, res, next) => {
-  process.exit(0);
+  process.exit(1);
   client.get("visits", (err, visits) => {
     res.status(200).send(`Total Visits: ${visits}`);
     client.set("visits", parseInt(visits) + 1);
