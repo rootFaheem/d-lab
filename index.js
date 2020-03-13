@@ -1,5 +1,6 @@
 const express = require("express");
 const redis = require("redis");
+const process = require("process");
 
 const app = express();
 const client = redis.createClient({
@@ -14,6 +15,7 @@ app.get("/", (req, res, next) =>
 );
 
 app.get("/visits", (req, res, next) => {
+  process.exit(0);
   client.get("visits", (err, visits) => {
     res.status(200).send(`Total Visits: ${visits}`);
     client.set("visits", parseInt(visits) + 1);
