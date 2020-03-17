@@ -7,3 +7,17 @@ before_install:
 
 script:
   - docker run rootfaheem/docker-lab yarn run test --coverage
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-south-1"
+  app: "docker-lab"
+  env: "DockerLab-env"
+  bucket_name: "elasticbeanstalk-ap-south-1-403740642838"
+  bucket_path: "docker-lab"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: "$AWS_SECRET_KEY"
