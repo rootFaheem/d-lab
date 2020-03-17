@@ -14,7 +14,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Click to Learn More
+          I am fron feature branch, Yes Bernie is best in the world!
         </a>
       </header>
     </div>
