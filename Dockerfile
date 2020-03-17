@@ -2,7 +2,7 @@
 # BUILD PHASE
 FROM node:alpine as builder
 WORKDIR "/app"
-COPY packages.json .
+COPY package.json .
 RUN yarn
 COPY . .
 RUN yarn run build
