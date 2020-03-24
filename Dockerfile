@@ -1,6 +1,7 @@
 # 1. Specify a  Base Image to be used
-FROM alpine
+FROM node:alpine
 
+WORKDIR /app
 # 2. Install dependencies
 COPY . .
 RUN yarn
