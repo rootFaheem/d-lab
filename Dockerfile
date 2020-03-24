@@ -1,12 +1,10 @@
-# 1. Specify a  Base Image to be used
-FROM node:alpine
-
-WORKDIR /usr/app
-
-# 2. Install dependencies
-COPY ./package.json ./
+FROM node:alpine as builder
+WORKDIR "/app"
+COPY package.json .
 RUN yarn
 COPY . .
+RUN yarn run build
 
-# 3.  Command to be run when the container is ready
-CMD ["yarn", "start"]
+
+FROM nginx
+COPY --from=builder /app/build /usr/share/nginx/html
